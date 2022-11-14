@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">lend_app</string>
+    <string name="splash_text">LEND</string>
+    <string name="sign_in_phrase_effect">Faça sua Reserva</string>
+    <string name="sign_in_button">Entrar</string>
+    <string name="sign_in_new">Novo Cadastro</string>
 </resources>

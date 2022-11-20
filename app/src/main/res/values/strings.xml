@@ -1,7 +1,23 @@
 <resources>
-    <string name="app_name">lend_app</string>
+    <!--  Splash Screen Activity -->
     <string name="splash_text">LEND</string>
+
+    <!--  SingIn Activity  -->
+    <string name="app_name">Lend</string>
     <string name="sign_in_phrase_effect">Faça sua Reserva</string>
     <string name="sign_in_button">Entrar</string>
     <string name="sign_in_new">Novo Cadastro</string>
+
+    <!--  Register Activity  -->
+    <string name="label_name">Nome</string>
+    <string name="pseudo_name">John Doe</string>
+    <string name="label_email">Email</string>
+    <string name="pseudo_email">john.doe@sample.com</string>
+    <string name="label_password">Senha</string>
+    <string name="pseudo_password">**********</string>
+    <string name="register_button">Cadastrar</string>
+
+    <!--  Login Activity  -->
+    <string name="login_action">Faça seu Login</string>
+    <string name="login_button">Login</string>
 </resources>

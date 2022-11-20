@@ -2,13 +2,13 @@
     <!-- Base application theme. -->
     <style name="Theme.Lend_app" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/purple_500</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
-        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorPrimary">@color/lend_red_base</item>
+        <item name="colorPrimaryVariant">@color/lend_red_base</item>
+        <item name="colorOnPrimary">@color/lend_red_base</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/teal_200</item>
-        <item name="colorSecondaryVariant">@color/teal_700</item>
-        <item name="colorOnSecondary">@color/black</item>
+        <item name="colorSecondary">@color/lend_red_base</item>
+        <item name="colorSecondaryVariant">@color/lend_red_base</item>
+        <item name="colorOnSecondary">@color/lend_red_base</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="21">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->

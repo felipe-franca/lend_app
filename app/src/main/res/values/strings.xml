@@ -16,6 +16,7 @@
     <string name="label_password">Senha</string>
     <string name="pseudo_password">**********</string>
     <string name="register_button">Cadastrar</string>
+    <string name="register_title">Novo Cadastro</string>
 
     <!--  Login Activity  -->
     <string name="login_action">Faça seu Login</string>

@@ -3,29 +3,53 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@color/lend_red_base"
     android:layout_height="match_parent"
     tools:context=".ui.RegisterActivity">
+
+    <ImageView
+        android:id="@+id/activity_register_image_view"
+        android:layout_width="0dp"
+        android:layout_height="90dp"
+        android:src="@mipmap/ic_splash_foreground"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/activity_register_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/activity_register_image_view"
+        android:textColor="@color/white"
+        android:text="@string/register_title"
+        android:textSize="14sp"
+        />
 
     <TextView
         android:id="@+id/activity_register_name_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="12dp"
+        android:layout_margin="20dp"
         android:text="@string/label_name"
-        android:textColor="@color/lend_red_base"
+        android:textColor="@color/white"
         android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/activity_register_title" />
 
     <EditText
         android:id="@+id/activity_register_name_input"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="12dp"
-        android:layout_marginRight="12dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
         android:hint="@string/pseudo_name"
         android:inputType="textCapWords"
-        android:textColor="@color/lend_red_base"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/activity_register_name_label"
         app:layout_constraintTop_toBottomOf="@+id/activity_register_name_label" />
@@ -35,7 +59,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/label_email"
-        android:textColor="@color/lend_red_base"
+        android:textColor="@color/white"
         android:textSize="14sp"
         app:layout_constraintStart_toStartOf="@+id/activity_register_name_label"
         app:layout_constraintTop_toBottomOf="@+id/activity_register_name_input" />
@@ -44,11 +68,12 @@
         android:id="@+id/activity_register_email_input"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="12dp"
-        android:layout_marginRight="12dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
         android:hint="@string/pseudo_email"
         android:inputType="textEmailAddress"
-        android:textColor="@color/lend_red_base"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/activity_register_email_label"
         app:layout_constraintTop_toBottomOf="@+id/activity_register_email_label" />
@@ -58,7 +83,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/label_password"
-        android:textColor="@color/lend_red_base"
+        android:textColor="@color/white"
         android:textSize="14sp"
         app:layout_constraintStart_toStartOf="@+id/activity_register_email_input"
         app:layout_constraintTop_toBottomOf="@+id/activity_register_email_input" />
@@ -66,11 +91,12 @@
     <EditText
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="12dp"
-        android:layout_marginRight="12dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
         android:hint="@string/pseudo_password"
         android:inputType="textPassword"
-        android:textColor="@color/lend_red_base"
+        android:textColor="@color/white"
+        android:backgroundTint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/activity_register_password_label"
         app:layout_constraintTop_toBottomOf="@+id/activity_register_password_label" />
@@ -79,9 +105,9 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="12dp"
-        android:backgroundTint="@color/lend_red_base"
+        android:backgroundTint="@color/white"
         android:text="@string/register_button"
-        android:textColor="@color/white"
+        android:textColor="@color/lend_red_base"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

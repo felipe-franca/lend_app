@@ -3,42 +3,53 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@color/lend_red_base"
     android:layout_height="match_parent"
+    android:background="@color/lend_red_base"
     tools:context=".ui.RegisterActivity">
 
     <ImageView
         android:id="@+id/activity_register_image_view"
         android:layout_width="0dp"
-        android:layout_height="90dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="16dp"
         android:src="@mipmap/ic_splash_foreground"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/activity_register_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/activity_register_image_view"
-        android:textColor="@color/white"
         android:text="@string/register_title"
-        android:textSize="14sp"
-        />
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/activity_register_image_view" />
+
+    <ImageView
+        android:id="@+id/activity_register_person_ico"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:src="@drawable/ic_outline_person_24"
+        app:layout_constraintBottom_toBottomOf="@+id/activity_register_name_input"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/activity_register_name_label" />
 
     <TextView
         android:id="@+id/activity_register_name_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
         android:text="@string/label_name"
         android:textColor="@color/white"
         android:textSize="14sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/activity_register_title" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/activity_register_person_ico"
+        app:layout_constraintTop_toBottomOf="@+id/activity_register_title"
+        app:layout_constraintVertical_bias="0.2" />
 
     <EditText
         android:id="@+id/activity_register_name_input"
@@ -46,13 +57,21 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="20dp"
         android:layout_marginRight="20dp"
+        android:backgroundTint="@color/white"
         android:hint="@string/pseudo_name"
         android:inputType="textCapWords"
         android:textColor="@color/white"
-        android:backgroundTint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/activity_register_name_label"
+        app:layout_constraintStart_toEndOf="@+id/activity_register_person_ico"
         app:layout_constraintTop_toBottomOf="@+id/activity_register_name_label" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_baseline_email_24"
+        app:layout_constraintBottom_toBottomOf="@+id/activity_register_email_input"
+        app:layout_constraintStart_toStartOf="@+id/activity_register_person_ico"
+        app:layout_constraintTop_toBottomOf="@+id/activity_register_email_label" />
 
     <TextView
         android:id="@+id/activity_register_email_label"
@@ -70,13 +89,21 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="20dp"
         android:layout_marginRight="20dp"
+        android:backgroundTint="@color/white"
         android:hint="@string/pseudo_email"
         android:inputType="textEmailAddress"
         android:textColor="@color/white"
-        android:backgroundTint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/activity_register_email_label"
         app:layout_constraintTop_toBottomOf="@+id/activity_register_email_label" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_outline_lock_24"
+        app:layout_constraintBottom_toBottomOf="@+id/activity_register_password_input"
+        app:layout_constraintStart_toStartOf="@+id/activity_register_person_ico"
+        app:layout_constraintTop_toBottomOf="@+id/activity_register_password_label" />
 
     <TextView
         android:id="@+id/activity_register_password_label"
@@ -89,14 +116,15 @@
         app:layout_constraintTop_toBottomOf="@+id/activity_register_email_input" />
 
     <EditText
+        android:id="@+id/activity_register_password_input"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="20dp"
         android:layout_marginRight="20dp"
+        android:backgroundTint="@color/white"
         android:hint="@string/pseudo_password"
         android:inputType="textPassword"
         android:textColor="@color/white"
-        android:backgroundTint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/activity_register_password_label"
         app:layout_constraintTop_toBottomOf="@+id/activity_register_password_label" />

@@ -19,12 +19,8 @@
 
     <TextView
         android:id="@+id/activity_register_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/HeadTitle"
         android:text="@string/register_title"
-        android:textColor="@color/white"
-        android:textSize="16sp"
-        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/activity_register_image_view" />
@@ -52,15 +48,13 @@
         app:layout_constraintVertical_bias="0.2" />
 
     <EditText
+        style="@style/EditTextWhiteBackgroundRed"
         android:id="@+id/activity_register_name_input"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
         android:layout_marginEnd="20dp"
         android:layout_marginRight="20dp"
         android:backgroundTint="@color/white"
         android:hint="@string/pseudo_name"
         android:inputType="textCapWords"
-        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/activity_register_person_ico"
         app:layout_constraintTop_toBottomOf="@+id/activity_register_name_label" />
@@ -84,15 +78,13 @@
         app:layout_constraintTop_toBottomOf="@+id/activity_register_name_input" />
 
     <EditText
+        style="@style/EditTextWhiteBackgroundRed"
         android:id="@+id/activity_register_email_input"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
         android:layout_marginEnd="20dp"
         android:layout_marginRight="20dp"
         android:backgroundTint="@color/white"
         android:hint="@string/pseudo_email"
         android:inputType="textEmailAddress"
-        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/activity_register_email_label"
         app:layout_constraintTop_toBottomOf="@+id/activity_register_email_label" />
@@ -116,26 +108,20 @@
         app:layout_constraintTop_toBottomOf="@+id/activity_register_email_input" />
 
     <EditText
+        style="@style/EditTextWhiteBackgroundRed"
         android:id="@+id/activity_register_password_input"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
         android:layout_marginEnd="20dp"
         android:layout_marginRight="20dp"
         android:backgroundTint="@color/white"
         android:hint="@string/pseudo_password"
         android:inputType="textPassword"
-        android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/activity_register_password_label"
         app:layout_constraintTop_toBottomOf="@+id/activity_register_password_label" />
 
     <Button
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="12dp"
-        android:backgroundTint="@color/white"
+        style="@style/LightButton"
         android:text="@string/register_button"
-        android:textColor="@color/lend_red_base"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

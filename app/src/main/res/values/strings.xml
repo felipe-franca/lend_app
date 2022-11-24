@@ -4,7 +4,7 @@
 
     <!--  SingIn Activity  -->
     <string name="app_name">Lend</string>
-    <string name="sign_in_phrase_effect">Faça sua Reserva</string>
+    <string name="sign_in_phrase_effect">Faça sua Reserva!</string>
     <string name="sign_in_button">Entrar</string>
     <string name="sign_in_new">Novo Cadastro</string>
 

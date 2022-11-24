@@ -8,23 +8,16 @@
     tools:context=".ui.LoginActivity">
 
     <ImageView
-        android:layout_marginTop="16dp"
+        style="@style/LendImage70"
         android:id="@+id/activity_login_image_view"
-        android:layout_width="0dp"
-        android:layout_height="70dp"
-        android:src="@mipmap/ic_splash_foreground"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
+        style="@style/HeadTitle"
         android:id="@+id/activity_login_action"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:text="@string/login_action"
-        android:textColor="@color/white"
-        android:textSize="16sp"
-        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/activity_login_image_view" />
@@ -53,13 +46,11 @@
         app:layout_constraintVertical_bias="0.2" />
 
     <EditText
+        style="@style/EditTextWhiteBackgroundRed"
         android:id="@+id/activity_login_email_input"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
         android:layout_marginEnd="20dp"
         android:inputType="textEmailAddress"
         android:hint="@string/pseudo_email"
-        android:textColor="@color/white"
         app:backgroundTint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/email_ico"
@@ -87,12 +78,10 @@
         />
 
     <EditText
+        style="@style/EditTextWhiteBackgroundRed"
         android:id="@+id/activity_login_password_input"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
         android:layout_marginEnd="20dp"
         android:inputType="textPassword"
-        android:textColor="@color/white"
         app:backgroundTint="@color/white"
         android:hint="@string/pseudo_password"
         app:layout_constraintStart_toEndOf="@+id/pass_ico"
@@ -100,13 +89,8 @@
         app:layout_constraintTop_toBottomOf="@+id/activity_login_password_label" />
 
     <Button
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="12dp"
-        android:backgroundTint="@color/white"
+        style="@style/LightButton"
         android:text="@string/login_button"
-        android:textColor="@color/lend_red_base"
-        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

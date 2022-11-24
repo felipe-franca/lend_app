@@ -27,9 +27,7 @@
 
     <ImageView
         android:id="@+id/sign_in_activity_lend_image"
-        android:layout_width="0dp"
-        android:layout_height="200dp"
-        android:src="@mipmap/ic_splash_foreground"
+        style="@style/LendImage200"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -46,19 +44,18 @@
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sign_in_activity_lend_image" />
+        app:layout_constraintTop_toBottomOf="@+id/sign_in_activity_lend_image"
+        android:gravity="center_horizontal" />
 
     <Button
+        style="@style/LightButton"
         android:id="@+id/sign_in_activity_sign_in_button"
         android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/white"
         android:text="@string/sign_in_button"
-        android:textColor="@color/lend_red_base"
         app:layout_constraintBottom_toBottomOf="parent"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:textStyle="bold"
         app:layout_constraintTop_toBottomOf="@+id/sign_in_activity_phrase_effect" />
 
     <Button

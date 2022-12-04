@@ -8,7 +8,7 @@
         <item name="android:textColor">@color/lend_red_base</item>
         <item name="android:background">@drawable/rounded_button_light</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:textSize">16dp</item>
+        <item name="android:textSize">16sp</item>
     </style>
     <style name="LendColorButton">
         <item name="android:layout_width">0dp</item>
@@ -17,7 +17,7 @@
         <item name="android:textColor">@color/white</item>
         <item name="android:background">@drawable/rounded_button_red</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:textSize">16dp</item>
+        <item name="android:textSize">16sp</item>
     </style>
     <style name="LendImage200">
         <item name="android:src">@mipmap/ic_splash_foreground</item>
@@ -41,5 +41,25 @@
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="EditTextRedBackgroundWhite">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/lend_red_base</item>
+    </style>
+    <style name="CardTitle">
+        <item name="android:layout_margin">8dp</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+    <style name="DetailTitleDark">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">8dp</item>
     </style>
 </resources>

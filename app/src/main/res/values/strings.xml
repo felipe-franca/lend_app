@@ -14,6 +14,7 @@
     <string name="label_email">Email</string>
     <string name="pseudo_email">john.doe@sample.com</string>
     <string name="label_password">Senha</string>
+    <string name="label_password_confirmation">Confirme a senha</string>
     <string name="pseudo_password">**********</string>
     <string name="register_button">Cadastrar</string>
     <string name="register_title">Novo Cadastro</string>
@@ -21,4 +22,20 @@
     <!--  Login Activity  -->
     <string name="login_action">Faça seu Login</string>
     <string name="login_button">Login</string>
+
+    <!--  Menu List Activity  -->
+    <string name="detail_info">Menu</string>
+
+    <!--  Menu Detail Activity  -->
+    <string name="price_value">Preço:</string>
+    <string name="reserv_button">Reservar</string>
+    <string name="available_times_label">Horários disponiveis</string>
+
+    <!-- Payment Activity  -->
+    <string name="payment_header_info">Preencha as informações do cartão de crédito que deseja utilizar para realizar o pagamento    </string>
+    <string name="payment_total_lable">Valor da compra:</string>
+    <string name="payment_card_number_placeholder">Número do cartão</string>
+    <string name="card_name_mask">ABCDEFGHIJKLMNOPQRSTUVXWYZÇ\u0020</string>
+    <string name="incone_garfo_e_faca">incone garfo e faca</string>
+    <string name="home_pizza_banner">Home pizza banner</string>
 </resources>

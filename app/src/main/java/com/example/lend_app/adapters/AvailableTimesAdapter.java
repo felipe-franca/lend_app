@@ -47,5 +47,6 @@ public class AvailableTimesAdapter extends BaseAdapter {
   private void bindCheckBox(View view, AvailableTimes av) {
     CheckBox cb = view.findViewById(R.id.available_times_check_box);
     cb.setText(av.toString());
+    cb.setId(av.getId());
   }
 }

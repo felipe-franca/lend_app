@@ -37,7 +37,7 @@ public class HomeActivity extends AppCompatActivity {
 
     ListView listView = findViewById(R.id.home_list_view);
 
-    ReservationsService service = new ApiClient().getReservationsResume();
+    ReservationsService service = new ApiClient().getReservationsService();
     Call<List<ReservationResume>> call = service.getReservations("felipe.paulino57@gmail.com");
 
     new BaseAsyncTask<>(() -> {

@@ -1,6 +1,5 @@
 package com.example.lend_app.retrofit;
 
-import com.example.lend_app.model.ReservationResume;
 import com.example.lend_app.retrofit.service.AuthService;
 import com.example.lend_app.retrofit.service.MealListService;
 import com.example.lend_app.retrofit.service.ReservationsService;
@@ -15,7 +14,7 @@ public class ApiClient {
   private final RestaurantService restaurantService;
   private final MealListService mealListService;
   private final AvailableTimesService availableTimesService;
-  private final ReservationsService reservationsResume;
+  private final ReservationsService reservationsService;
   private final AuthService authService;
 
   public ApiClient() {
@@ -27,7 +26,7 @@ public class ApiClient {
     restaurantService = retrofit.create(RestaurantService.class);
     mealListService = retrofit.create(MealListService.class);
     availableTimesService = retrofit.create(AvailableTimesService.class);
-    reservationsResume = retrofit.create(ReservationsService.class);
+    reservationsService = retrofit.create(ReservationsService.class);
     authService = retrofit.create(AuthService.class);
   }
 
@@ -39,7 +38,7 @@ public class ApiClient {
 
   public AvailableTimesService getAvailableTimesService() { return availableTimesService; }
 
-  public ReservationsService getReservationsResume() { return reservationsResume; }
+  public ReservationsService getReservationsService() { return reservationsService; }
 
   public AuthService getAuthService() { return authService; }
 }

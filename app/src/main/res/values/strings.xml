@@ -38,4 +38,5 @@
     <string name="card_name_mask">ABCDEFGHIJKLMNOPQRSTUVXWYZÇ\u0020</string>
     <string name="incone_garfo_e_faca">incone garfo e faca</string>
     <string name="home_pizza_banner">Home pizza banner</string>
+    <string name="buy_resume">Resumo da Compra</string>
 </resources>

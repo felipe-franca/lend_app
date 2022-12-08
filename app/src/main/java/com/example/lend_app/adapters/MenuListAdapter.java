@@ -13,6 +13,7 @@ import android.graphics.drawable.Drawable;
 import com.example.lend_app.R;
 import com.example.lend_app.model.Meal;
 import com.example.lend_app.utils.CurrencyFormatter;
+import com.example.lend_app.utils.ImageFetch;
 
 import java.util.List;
 
@@ -70,12 +71,7 @@ public class MenuListAdapter extends BaseAdapter {
   }
 
   private void bindImage(View view, Meal meal) {
-    ImageView imageView = view.findViewById(R.id.menu_image);
-    Resources res = context.getResources();
-
-    int drawableId = res.getIdentifier(meal.getImage(), "drawable", context.getPackageName());
-    Drawable imagePack = res.getDrawable(drawableId);
-
-    imageView.setImageDrawable(imagePack);
+    new ImageFetch((ImageView) view.findViewById(R.id.menu_image))
+      .execute(meal.getImage());
   }
 }

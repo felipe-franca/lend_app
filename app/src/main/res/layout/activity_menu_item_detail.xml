@@ -9,7 +9,7 @@
     <ImageView
         android:id="@+id/menu_detail_image"
         android:layout_width="0dp"
-        android:layout_height="120dp"
+        android:layout_height="200dp"
         android:scaleType="centerCrop"
         android:src="@mipmap/ic_splash_foreground"
         app:layout_constraintEnd_toEndOf="parent"
@@ -68,27 +68,25 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
         android:text="@string/available_times_label"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/menu_detail_watch_icon"
         app:layout_constraintStart_toEndOf="@+id/menu_detail_watch_icon"
-        app:layout_constraintTop_toTopOf="@+id/menu_detail_watch_icon"
-        android:textStyle="bold"
-        android:layout_marginStart="8dp"
-        />
+        app:layout_constraintTop_toTopOf="@+id/menu_detail_watch_icon" />
 
     <ListView
         android:id="@+id/menu_detail_available_times"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginBottom="12dp"
+        android:divider="@null"
+        android:dividerHeight="0dp"
         app:layout_constraintBottom_toTopOf="@+id/menu_detail_reserv_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/menu_detail_watch_icon"
-        tools:listitem="@layout/available_times"
-        android:divider="@null"
-        android:dividerHeight="0dp"
-        android:layout_marginBottom="12dp"
-        />
+        tools:listitem="@layout/available_times" />
 
     <Button
         android:id="@+id/menu_detail_reserv_button"

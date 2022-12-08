@@ -6,9 +6,12 @@ import android.widget.CheckBox;
 import android.content.Context;
 import android.widget.BaseAdapter;
 import android.view.LayoutInflater;
+import android.widget.ImageView;
 
 import com.example.lend_app.R;
 import com.example.lend_app.model.AvailableTimes;
+import com.example.lend_app.model.Meal;
+import com.example.lend_app.utils.ImageFetch;
 
 import java.util.List;
 
@@ -27,7 +30,9 @@ public class AvailableTimesAdapter extends BaseAdapter {
   }
 
   @Override
-  public Object getItem(int i) { return availableTimes.get(i); }
+  public Object getItem(int i) {
+    return availableTimes.get(i);
+  }
 
   @Override
   public long getItemId(int i) {

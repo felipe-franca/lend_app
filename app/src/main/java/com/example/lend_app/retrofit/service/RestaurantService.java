@@ -9,6 +9,6 @@ import retrofit2.http.GET;
 
 public interface RestaurantService {
 
-  @GET("/restaurants")
+  @GET("/restaurants/all")
   Call<List<Restaurant>> getRestaurants();
 }

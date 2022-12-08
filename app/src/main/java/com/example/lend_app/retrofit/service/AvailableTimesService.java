@@ -9,6 +9,6 @@ import retrofit2.http.GET;
 import retrofit2.http.Path;
 
 public interface AvailableTimesService {
-  @GET("/{id}/availables")
-  Call<List<AvailableTimes>> getAvailableTimes(@Path("id") int id);
+  @GET("/restaurants/{restId}/available-times/{mealId}")
+  Call<List<AvailableTimes>> getAvailableTimes(@Path("restId") int restId, @Path("mealId") int mealId);
 }

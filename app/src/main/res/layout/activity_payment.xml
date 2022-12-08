@@ -97,6 +97,7 @@
         app:layout_constraintTop_toBottomOf="@+id/payment_card_number" />
 
     <EditText
+        android:id="@+id/payment_card_owner"
         style="@style/EditTextRedBackgroundWhite"
         android:layout_width="0dp"
         android:layout_height="wrap_content"

@@ -2,10 +2,10 @@ package com.example.lend_app.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -18,10 +18,12 @@ import com.example.lend_app.model.AvailableTimes;
 import com.example.lend_app.model.DraftReservation;
 import com.example.lend_app.model.ExtraIntentKeys;
 import com.example.lend_app.model.Meal;
+import com.example.lend_app.model.Restaurant;
 import com.example.lend_app.retrofit.ApiClient;
 import com.example.lend_app.retrofit.service.AvailableTimesService;
 import com.example.lend_app.retrofit.service.ReservationsService;
 import com.example.lend_app.utils.CurrencyFormatter;
+import com.example.lend_app.utils.ImageFetch;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,22 +43,34 @@ public class MenuItemDetailActivity extends AppCompatActivity implements ExtraIn
   }
 
   private void configView() {
+
     ListView listView = findViewById(R.id.menu_detail_available_times);
 
     Intent intent = getIntent();
     Meal meal = (Meal) intent.getSerializableExtra(MEAL_KEY);
+    Restaurant restaurant = (Restaurant) intent.getSerializableExtra(RESTAURANT_KEY);
+
     setTitle(meal.getName());
+
+    new ImageFetch((ImageView) findViewById(R.id.menu_detail_image))
+      .execute(meal.getImage());
+
+    TextView title = findViewById(R.id.menu_detail_title);
+    title.setText(meal.getName());
+
+    TextView description = findViewById(R.id.menu_detail_description);
+    description.setText(meal.getDescription());
 
     TextView price = findViewById(R.id.menu_detail_price);
     price.setText(CurrencyFormatter.formatToBrl(meal.getPrice()));
 
-    chargeAvailableTimes(listView, meal);
+    chargeAvailableTimes(listView, meal, restaurant);
     handleSubmit(listView, meal);
   }
 
-  private void chargeAvailableTimes(ListView listView, Meal meal) {
+  private void chargeAvailableTimes(ListView listView, Meal meal, Restaurant restaurant) {
     AvailableTimesService service = new ApiClient().getAvailableTimesService();
-    Call<List<AvailableTimes>> call = service.getAvailableTimes(meal.getId());
+    Call<List<AvailableTimes>> call = service.getAvailableTimes(restaurant.getId(), meal.getId());
 
     call.enqueue(new Callback<List<AvailableTimes>>() {
       @Override
@@ -115,7 +129,6 @@ public class MenuItemDetailActivity extends AppCompatActivity implements ExtraIn
       @Override
       public void onResponse(Call<DraftReservation> call, Response<DraftReservation> response) {
         DraftReservation dReservation = response.body();
-        Log.i("response", Integer.toString(dReservation.getId()));
 
         if (dReservation.getId() < 1) {
           Toast.makeText(

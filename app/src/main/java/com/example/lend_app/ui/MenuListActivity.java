@@ -57,9 +57,10 @@ public class MenuListActivity extends AppCompatActivity implements ExtraIntentKe
         listView.setAdapter(new MenuListAdapter(mealsList, this));
 
         listView.setOnItemClickListener((adapterView, view, i, l) -> {
-          Intent intent1 = new Intent(MenuListActivity.this, MenuItemDetailActivity.class);
-          intent1.putExtra(MEAL_KEY, mealsList.get(i));
-          startActivity(intent1);
+          Intent intentTo = new Intent(MenuListActivity.this, MenuItemDetailActivity.class);
+          intentTo.putExtra(MEAL_KEY, mealsList.get(i));
+          intentTo.putExtra(RESTAURANT_KEY, restaurant);
+          startActivity(intentTo);
         });
       }
     }).execute();

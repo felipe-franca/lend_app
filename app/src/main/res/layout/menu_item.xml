@@ -23,17 +23,20 @@
                 android:layout_width="130dp"
                 android:layout_height="0dp"
                 android:src="@mipmap/ic_splash_foreground"
+                android:scaleType="centerCrop"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/card_description"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintHorizontal_chainStyle="packed"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                android:contentDescription="Ilustração da refeição" />
 
             <TextView
                 android:id="@+id/menu_title"
                 style="@style/CardTitle"
-                android:text="BOLO 70% CACAU COM NOZES"
+                android:layout_width="0dp"
+                android:text="BOLO ABACAXI COM COCO 0% DE AÇÚCAR"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0"
                 app:layout_constraintStart_toEndOf="@+id/menu_image"

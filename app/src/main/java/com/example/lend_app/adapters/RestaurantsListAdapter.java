@@ -3,7 +3,10 @@ package com.example.lend_app.adapters;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.Resources;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
+import android.os.AsyncTask;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,14 +15,17 @@ import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.lend_app.R;
 
+import java.io.InputStream;
 import java.util.List;
 
 import com.example.lend_app.model.Restaurant;
 import com.example.lend_app.ui.MenuListActivity;
 import com.example.lend_app.ui.RestaurantListActivity;
+import com.example.lend_app.utils.ImageFetch;
 
 public class RestaurantsListAdapter extends BaseAdapter {
   private final List<Restaurant> restaurants;
@@ -69,12 +75,7 @@ public class RestaurantsListAdapter extends BaseAdapter {
   }
 
   private void bindImage(View view, Restaurant restaurant) {
-    ImageView image = view.findViewById(R.id.card_image);
-    Resources res = context.getResources();
-
-    int drawableId = res.getIdentifier(restaurant.getImage(), "drawable", context.getPackageName());
-    Drawable imagePackage = res.getDrawable(drawableId);
-
-    image.setImageDrawable(imagePackage);
+    new ImageFetch((ImageView) view.findViewById(R.id.card_image))
+      .execute(restaurant.getImage());
   }
 }

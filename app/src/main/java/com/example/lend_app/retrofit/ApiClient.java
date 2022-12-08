@@ -2,6 +2,7 @@ package com.example.lend_app.retrofit;
 
 import com.example.lend_app.retrofit.service.AuthService;
 import com.example.lend_app.retrofit.service.MealListService;
+import com.example.lend_app.retrofit.service.PaymentService;
 import com.example.lend_app.retrofit.service.ReservationsService;
 import com.example.lend_app.retrofit.service.RestaurantService;
 import com.example.lend_app.retrofit.service.AvailableTimesService;
@@ -16,6 +17,7 @@ public class ApiClient {
   private final AvailableTimesService availableTimesService;
   private final ReservationsService reservationsService;
   private final AuthService authService;
+  private final PaymentService paymentService;
 
   public ApiClient() {
     Retrofit retrofit = new Retrofit.Builder()
@@ -28,6 +30,7 @@ public class ApiClient {
     availableTimesService = retrofit.create(AvailableTimesService.class);
     reservationsService = retrofit.create(ReservationsService.class);
     authService = retrofit.create(AuthService.class);
+    paymentService = retrofit.create(PaymentService.class);
   }
 
   public RestaurantService getRestaurantService() {
@@ -41,4 +44,6 @@ public class ApiClient {
   public ReservationsService getReservationsService() { return reservationsService; }
 
   public AuthService getAuthService() { return authService; }
+
+  public PaymentService getPaymentService() { return paymentService; }
 }

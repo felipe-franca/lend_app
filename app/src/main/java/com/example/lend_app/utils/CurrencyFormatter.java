@@ -9,7 +9,7 @@ public class CurrencyFormatter {
 
   public static String formatToBrl(BigDecimal value) {
     NumberFormat brlFormat = DecimalFormat
-      .getCurrencyInstance(new Locale("pt","BR"));
+      .getCurrencyInstance(new Locale("pt", "BR"));
 
     return brlFormat.format(value);
   }

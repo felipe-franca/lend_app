@@ -14,9 +14,9 @@ import retrofit2.http.Path;
 
 public interface ReservationsService {
 
-  @GET("/reservations/{email}")
+  @GET("/reservations/my-reservations/{email}")
   Call<List<ReservationResume>> getReservations(@Path("email") String email);
 
-  @POST("/reservation/new")
+  @POST("/reservations/new")
   Call<DraftReservation> createDraftReservation(@Body DraftReservation draftReservation);
 }

@@ -9,45 +9,33 @@
     <ImageView
         android:id="@+id/payment_finished_congrats"
         android:layout_width="0dp"
-        android:layout_height="100dp"
+        android:layout_height="40dp"
         android:background="@color/lend_red_base"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/congrats_word"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Parabêns !"
-        android:textColor="@color/white"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@id/payment_finished_congrats"
-        app:layout_constraintEnd_toEndOf="@id/payment_finished_congrats"
-        app:layout_constraintStart_toStartOf="@id/payment_finished_congrats"
-        app:layout_constraintTop_toTopOf="@id/payment_finished_congrats"
-        app:layout_constraintVertical_bias=".2" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
         android:text="Pagamento confirmado com sucesso ;)"
+        android:textAlignment="center"
         android:textColor="@color/white"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@id/payment_finished_congrats"
-        app:layout_constraintEnd_toEndOf="@id/payment_finished_congrats"
-        app:layout_constraintStart_toStartOf="@id/payment_finished_congrats"
-        app:layout_constraintTop_toBottomOf="@id/congrats_word"
-        app:layout_constraintVertical_bias=".2" />
+        app:layout_constraintBottom_toBottomOf="@+id/payment_finished_congrats"
+        app:layout_constraintEnd_toEndOf="@+id/payment_finished_congrats"
+        app:layout_constraintStart_toStartOf="@+id/payment_finished_congrats"
+        app:layout_constraintTop_toTopOf="@+id/payment_finished_congrats" />
 
     <TextView
         android:id="@+id/payment_resume_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="12dp"
-        android:text="Resumo da Compra"
+        android:text="@string/buy_resume"
         android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/payment_resume_image"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/payment_finished_congrats" />
@@ -55,7 +43,8 @@
     <ImageView
         android:id="@+id/payment_resume_image"
         android:layout_width="0dp"
-        android:layout_height="150dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="6dp"
         android:scaleType="centerCrop"
         android:src="@mipmap/ic_splash_foreground"
         app:layout_constraintEnd_toEndOf="parent"
@@ -86,11 +75,21 @@
         android:id="@+id/payment_resume_price"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/payment_resume_meal_description"
-        app:layout_constraintStart_toStartOf="@id/payment_resume_meal_title"
-        android:textSize="26sp"
+        android:text="R$ 32,49"
         android:textColor="@android:color/holo_green_dark"
-        android:text="R$ 32,49" />
+        android:textSize="26sp"
+        app:layout_constraintStart_toStartOf="@id/payment_resume_meal_title"
+        app:layout_constraintTop_toBottomOf="@id/payment_resume_meal_description" />
+
+    <Button
+        android:id="@+id/payment_finished_button"
+        style="@style/LendColorButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Voltar a tela inicial"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

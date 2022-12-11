@@ -1,19 +1,22 @@
 package com.example.lend_app.ui;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.room.Room;
+
 import com.example.lend_app.R;
+import com.example.lend_app.database.Database;
+import com.example.lend_app.database.dao.RoomUserDao;
 import com.example.lend_app.model.ExtraIntentKeys;
 import com.example.lend_app.model.Meal;
 import com.example.lend_app.model.Payment;
+import com.example.lend_app.model.User;
 import com.example.lend_app.retrofit.ApiClient;
 import com.example.lend_app.retrofit.service.PaymentService;
 import com.example.lend_app.utils.CurrencyFormatter;
@@ -62,11 +65,14 @@ public class PaymentActivity extends AppCompatActivity implements ExtraIntentKey
         return;
       }
 
+      User user = getUser();
+
       Payment payment = new Payment(
         cardNumber.getText().toString(),
         expiresInMonth.getText().toString() + "/" + expiresInYear.getText().toString(),
         cvc.getText().toString(),
-        cardOwner.getText().toString()
+        cardOwner.getText().toString(),
+        user.getEmail()
       );
 
       PaymentService service = new ApiClient().getPaymentService();
@@ -82,6 +88,8 @@ public class PaymentActivity extends AppCompatActivity implements ExtraIntentKey
               PaymentActivity.this,
               "Erro ao realizar pagamento. Tente novamente em instantes",
               Toast.LENGTH_SHORT).show();
+
+              return;
           }
 
           next(meal);
@@ -97,6 +105,15 @@ public class PaymentActivity extends AppCompatActivity implements ExtraIntentKey
       });
 
     });
+  }
+
+  private User getUser() {
+    RoomUserDao dao = Room.databaseBuilder(this, Database.class, "lend.db")
+      .allowMainThreadQueries()
+      .build()
+      .getRoomUserDao();
+
+    return dao.get();
   }
 
   private Boolean checkFields() {

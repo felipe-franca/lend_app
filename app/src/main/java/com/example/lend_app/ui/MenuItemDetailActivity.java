@@ -11,14 +11,18 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.room.Room;
 
 import com.example.lend_app.R;
 import com.example.lend_app.adapters.AvailableTimesAdapter;
+import com.example.lend_app.database.Database;
+import com.example.lend_app.database.dao.RoomUserDao;
 import com.example.lend_app.model.AvailableTimes;
 import com.example.lend_app.model.DraftReservation;
 import com.example.lend_app.model.ExtraIntentKeys;
 import com.example.lend_app.model.Meal;
 import com.example.lend_app.model.Restaurant;
+import com.example.lend_app.model.User;
 import com.example.lend_app.retrofit.ApiClient;
 import com.example.lend_app.retrofit.service.AvailableTimesService;
 import com.example.lend_app.retrofit.service.ReservationsService;
@@ -65,7 +69,7 @@ public class MenuItemDetailActivity extends AppCompatActivity implements ExtraIn
     price.setText(CurrencyFormatter.formatToBrl(meal.getPrice()));
 
     chargeAvailableTimes(listView, meal, restaurant);
-    handleSubmit(listView, meal);
+    handleSubmit(listView, meal, restaurant);
   }
 
   private void chargeAvailableTimes(ListView listView, Meal meal, Restaurant restaurant) {
@@ -86,7 +90,7 @@ public class MenuItemDetailActivity extends AppCompatActivity implements ExtraIn
     });
   }
 
-  private void handleSubmit(ListView listView, Meal meal) {
+  private void handleSubmit(ListView listView, Meal meal, Restaurant restaurant) {
     Button button = findViewById(R.id.menu_detail_reserv_button);
 
     button.setOnClickListener(view -> {
@@ -104,21 +108,23 @@ public class MenuItemDetailActivity extends AppCompatActivity implements ExtraIn
         return;
       }
 
-      postDraftReservation(checkedList, meal);
+      postDraftReservation(checkedList, meal, restaurant);
     });
   }
 
-  private void postDraftReservation(List<CheckBox> checkedsList, Meal meal) {
+  private void postDraftReservation(List<CheckBox> checkedsList, Meal meal, Restaurant restaurant) {
     ArrayList<Integer> availableTimesIdList = new ArrayList<>();
 
     for (int i = 0; i < checkedsList.size(); i++) {
       availableTimesIdList.add(checkedsList.get(i).getId());
     }
 
+    User user = getUser();
+
     DraftReservation draftReservation = new DraftReservation(
-      1,
-      "felipe.franca@mail.com",
-      1,
+      restaurant.getId(),
+      user.getEmail(),
+      meal.getId(),
       availableTimesIdList
     );
 
@@ -149,6 +155,15 @@ public class MenuItemDetailActivity extends AppCompatActivity implements ExtraIn
           Toast.LENGTH_SHORT).show();
       }
     });
+  }
+
+  private User getUser() {
+    RoomUserDao dao = Room.databaseBuilder(this, Database.class, "lend.db")
+      .allowMainThreadQueries()
+      .build()
+      .getRoomUserDao();
+
+    return dao.get();
   }
 
   private void next(Meal meal) {

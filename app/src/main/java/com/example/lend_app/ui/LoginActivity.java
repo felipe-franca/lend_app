@@ -48,7 +48,7 @@ public class LoginActivity extends AppCompatActivity implements ExtraIntentKeys 
           User user = response.body();
 
           Toast.makeText(LoginActivity.this, "Bem vindo " + user.getName(), Toast.LENGTH_SHORT).show();
-          next(user);
+          next();
         }
 
         @Override
@@ -67,9 +67,8 @@ public class LoginActivity extends AppCompatActivity implements ExtraIntentKeys 
     return !email.getText().toString().equals("") && !password.getText().toString().equals("");
   }
 
-  private void next(User user) {
+  private void next() {
     Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
-    intent.putExtra(USER_KEY, user);
     startActivity(intent);
   }
 }

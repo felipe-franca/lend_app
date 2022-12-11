@@ -6,13 +6,15 @@ public class Payment {
   private final String expiresIn;
   private final String cvc;
   private final String owner;
+  private final String ownerEmail;
 
-  public Payment(String cardNumber, String expiresIn, String cvc, String owner) {
+  public Payment(String cardNumber, String expiresIn, String cvc, String owner, String ownerEmail) {
     this.id = 0;
     this.cardNumber = cardNumber;
     this.expiresIn = expiresIn;
     this.cvc = cvc;
     this.owner = owner;
+    this.ownerEmail = ownerEmail;
   }
 
   public int getId() {
@@ -34,4 +36,6 @@ public class Payment {
   public String getOwner() {
     return owner;
   }
+
+  public String getOwnerEmail() { return ownerEmail; }
 }

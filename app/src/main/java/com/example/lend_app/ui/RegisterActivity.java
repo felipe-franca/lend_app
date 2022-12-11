@@ -7,8 +7,11 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.room.Room;
 
 import com.example.lend_app.R;
+import com.example.lend_app.database.Database;
+import com.example.lend_app.database.dao.RoomUserDao;
 import com.example.lend_app.model.User;
 import com.example.lend_app.retrofit.ApiClient;
 import com.example.lend_app.retrofit.service.AuthService;
@@ -53,12 +56,16 @@ public class RegisterActivity extends AppCompatActivity {
         return;
       }
 
-      AuthService service = new ApiClient().getAuthService();
-      Call<User> call = service.register(new User(
+      User user =  new User(
         name.getText().toString(),
         email.getText().toString(),
-        password.getText().toString())
+        password.getText().toString()
       );
+
+      persistUser(user);
+
+      AuthService service = new ApiClient().getAuthService();
+      Call<User> call = service.register(user);
 
       call.enqueue(new Callback<User>() {
         @Override
@@ -100,4 +107,15 @@ public class RegisterActivity extends AppCompatActivity {
   private Boolean checkPassword() {
     return !password.getText().toString().equals(passwordConfirm.getText().toString());
   }
+
+  private void persistUser(User user) {
+    Database db = Room.databaseBuilder(this, Database.class, "lend.db")
+      .allowMainThreadQueries()
+      .build();
+
+    RoomUserDao dao = db.getRoomUserDao();
+    dao.remove();
+    dao.save(user);
+  }
+
 }

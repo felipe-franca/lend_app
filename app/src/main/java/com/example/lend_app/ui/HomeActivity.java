@@ -1,6 +1,7 @@
 package com.example.lend_app.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.room.Room;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,6 +11,8 @@ import android.widget.Toast;
 import com.example.lend_app.R;
 import com.example.lend_app.adapters.HomeAdapter;
 import com.example.lend_app.asynctask.BaseAsyncTask;
+import com.example.lend_app.database.Database;
+import com.example.lend_app.database.dao.RoomUserDao;
 import com.example.lend_app.model.ExtraIntentKeys;
 import com.example.lend_app.model.Reservation;
 import com.example.lend_app.model.ReservationResume;
@@ -39,8 +42,7 @@ public class HomeActivity extends AppCompatActivity implements ExtraIntentKeys {
   private void configView() {
     setTitle(TITLE);
 
-    Intent intent = getIntent();
-    User user = (User) intent.getSerializableExtra(USER_KEY);
+    User user = getUser();
 
     ListView listView = findViewById(R.id.home_list_view);
 
@@ -73,5 +75,14 @@ public class HomeActivity extends AppCompatActivity implements ExtraIntentKeys {
       Intent intentTo = new Intent(HomeActivity.this, RestaurantListActivity.class);
       startActivity(intentTo);
     });
+  }
+
+  private User getUser() {
+    RoomUserDao dao = Room.databaseBuilder(this, Database.class, "lend.db")
+      .allowMainThreadQueries()
+      .build()
+      .getRoomUserDao();
+
+    return dao.get();
   }
 }

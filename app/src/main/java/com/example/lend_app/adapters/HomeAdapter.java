@@ -9,10 +9,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.lend_app.R;
 import com.example.lend_app.model.ReservationResume;
+import com.example.lend_app.utils.ImageFetch;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -51,6 +53,8 @@ public class HomeAdapter extends BaseAdapter {
     bindTitle(aView, aReservation);
     bindDate(aView, aReservation);
     bindStatus(aView, aReservation);
+    bindMealDescription(aView, aReservation);
+    bindImage(aView, aReservation);
 
     return aView;
   }
@@ -82,5 +86,15 @@ public class HomeAdapter extends BaseAdapter {
       status.setTextColor(Color.parseColor("#669900"));
       status.setText("Confirmado");
     }
+  }
+
+  private void bindMealDescription(View view, ReservationResume reservation) {
+    TextView mealDescription = view.findViewById(R.id.home_card_meal);
+    mealDescription.setText(reservation.getMealTitle());
+  }
+
+  private void bindImage(View view, ReservationResume reservation) {
+    new ImageFetch((ImageView) view.findViewById(R.id.home_card_image))
+      .execute(reservation.getMealImage());
   }
 }

@@ -1,10 +1,19 @@
 package com.example.lend_app.model;
 
+import androidx.annotation.NonNull;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
 import java.io.Serializable;
 
+@Entity
 public class User implements Serializable {
   private final String name;
+
+  @PrimaryKey
+  @NonNull
   private final String email;
+
   private final String password;
 
   public User(String name, String email, String password) {

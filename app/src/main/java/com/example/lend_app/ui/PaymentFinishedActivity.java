@@ -41,7 +41,6 @@ public class PaymentFinishedActivity extends AppCompatActivity implements ExtraI
     button.setOnClickListener(view -> {
       Intent intentTo = new Intent(this, HomeActivity.class);
       startActivity(intentTo);
-      finish();
     });
   }
 

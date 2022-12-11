@@ -3,7 +3,7 @@
 <img src="https://lh4.googleusercontent.com/Sg-GUFSx_P14GiMMl_BtU8vMVTi510b3FF7-7MwFWUo16btOR30Gi8OZkjO978Hl2PI=w1200-h630-p" width="150" align="right"/>
 
 
-Um aplicativo Android para relizar a reserva online da sua refeitção no horário exato !
+Um aplicativo Android para relizar a reserva online da sua refeição no horário exato !
 <br>
 <br>
 

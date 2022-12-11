@@ -25,8 +25,8 @@ Link do protótipo: <a href="https://marvelapp.com/prototype/71fg38a/screen/8894
 - Rafaela Nascimento Carvalho - RA: 8266552
 
 # Configurações
- - No arquivo app/src/main/java/com/example/lend_app/retrofit/ApiClient.java, configurar o IP e porta da máquina que hopedará o serviço backend;
+ - No arquivo app/src/main/java/com/example/lend_app/retrofit/ApiClient.java, configurar o IP e porta da máquina que hospedará o serviço backend;
 
   <img src="https://drive.google.com/uc?export=download&id=1U3uk4onedRfnMDFPaXBeWa7RKmUhVmGF" width="700">
 
- - Intruções para download e instalação do serviço backend no seguinte link: <a href="https://github.com/felipe-franca/lend_backend">Backend</a>
+ - Instruções para download e instalação do serviço backend no seguinte link: <a href="https://github.com/felipe-franca/lend_backend">Backend</a>
